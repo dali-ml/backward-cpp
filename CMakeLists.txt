@@ -43,7 +43,9 @@ target_compile_definitions(backward_object PRIVATE ${BACKWARD_DEFINITIONS})
 target_include_directories(backward_object PRIVATE ${BACKWARD_INCLUDE_DIRS})
 set(BACKWARD_ENABLE $<TARGET_OBJECTS:backward_object> CACHE STRING
 	"Link with this object to setup backward automatically")
-
+set(BACKWARD_LIBRARIES    ${BACKWARD_LIBRARIES}    PARENT_SCOPE)
+set(BACKWARD_INCLUDE_DIRS ${BACKWARD_INCLUDE_DIRS} PARENT_SCOPE)
+set(BACKWARD_DEFINITIONS  ${BACKWARD_DEFINITIONS}  PARENT_SCOPE)
 
 ###############################################################################
 # TESTS
